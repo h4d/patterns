@@ -10,12 +10,12 @@ Esta biblioteca puede instalarse vía composer añadiendo esto a tu fichero comp
       "minimum-stability": "dev",
       "prefer-stable": true,
       "require": {
-        "h4d/patters": "^1.0"
+        "h4d/patterns": "^1.0"
       },
       "repositories": [
         {
           "type": "vcs",
-          "url": "git@dev.hosting4devs.com:h4d/patters.git"
+          "url": "git@dev.hosting4devs.com:h4d/patterns.git"
         }
       ]
     }
