@@ -1,0 +1,22 @@
+{
+  "name": "h4d/patters",
+  "description": "Common patters",
+  "keywords": [
+    "design", "patterns", "pattern"
+  ],
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Miguel Ángel Graña",
+      "email": "miguel.mailbox@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.9"
+  },
+  "require-dev": {},
+  "repositories": [],
+  "autoload": {
+    "psr-4": {"H4D\\Patterns\\": "src"}
+  }
+}
