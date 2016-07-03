@@ -4,12 +4,15 @@
 namespace H4D\Patterns\Interfaces;
 
 
+use H4D\Patterns\SubscribersCollection;
+
 interface PublisherInterface
 {
     /**
      * @return string
      */
     public function getName();
+    
     /**
      * @param EventInterface $event
      */
@@ -31,5 +34,10 @@ interface PublisherInterface
      * @return bool
      */
     public function hasSubscriber(SubscriberInterface $subscriberInterface);
+
+    /**
+     * @return SubscribersCollection
+     */
+    public function getSubscribers();
 
 }
