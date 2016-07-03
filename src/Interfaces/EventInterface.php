@@ -17,6 +17,14 @@ interface EventInterface
     public function getContext();
 
     /**
+     * @param string $key
+     * @param mixed $default
+     *
+     * @return mixed
+     */
+    public function getContextValue($key, $default = null);
+
+    /**
      * @return int
      */
     public function getTimestamp();
