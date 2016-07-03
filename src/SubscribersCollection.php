@@ -13,7 +13,7 @@ class SubscribersCollection extends SplObjectStorage
      * @param SubscriberInterface $object
      * @param mixed $data
      */
-    public function attach(SubscriberInterface $object, $data = null)
+    public function attach($object, $data = null)
     {
         parent::attach($object, $data);
     }
@@ -21,7 +21,7 @@ class SubscribersCollection extends SplObjectStorage
     /**
      * @param SubscriberInterface $object
      */
-    public function detach(SubscriberInterface $object)
+    public function detach($object)
     {
         parent::detach($object);
     }
@@ -31,7 +31,7 @@ class SubscribersCollection extends SplObjectStorage
      *
      * @return bool
      */
-    public function contains(SubscriberInterface $object)
+    public function contains($object)
     {
         return parent::contains($object);
     }
@@ -41,7 +41,7 @@ class SubscribersCollection extends SplObjectStorage
      *
      * @return string
      */
-    public function getHash(SubscriberInterface  $object)
+    public function getHash($object)
     {
         return parent::getHash($object);
     }
