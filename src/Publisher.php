@@ -8,7 +8,6 @@ use H4D\Patterns\Interfaces\EventInterface;
 use H4D\Patterns\Interfaces\PublisherInterface;
 use H4D\Patterns\Interfaces\SubscriberInterface;
 use H4D\Patterns\Traits\SubscribersAwareTrait;
-use SplObjectStorage;
 
 class Publisher implements PublisherInterface
 {
@@ -19,7 +18,7 @@ class Publisher implements PublisherInterface
      */
     public function __construct()
     {
-        $this->subscribers = new SplObjectStorage();
+        $this->subscribers = new SubscribersCollection();
     }
 
     /**
