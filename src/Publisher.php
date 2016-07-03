@@ -1,12 +1,9 @@
 <?php
 
-
 namespace H4D\Patterns;
-
 
 use H4D\Patterns\Interfaces\EventInterface;
 use H4D\Patterns\Interfaces\PublisherInterface;
-use H4D\Patterns\Interfaces\SubscriberInterface;
 use H4D\Patterns\Traits\SubscribersAwareTrait;
 
 class Publisher implements PublisherInterface
@@ -34,8 +31,7 @@ class Publisher implements PublisherInterface
      */
     public function publish(EventInterface $event)
     {
-        /** @var SubscriberInterface $subscriber */
-        foreach ($this->subscribers as $subscriber)
+        foreach ($this->getSubscribers() as $subscriber)
         {
             $subscriber->update($event, $this);
         }
