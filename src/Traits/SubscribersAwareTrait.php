@@ -4,12 +4,12 @@
 namespace H4D\Patterns\Traits;
 
 use H4D\Patterns\Interfaces\SubscriberInterface;
-use SplObjectStorage;
+use H4D\Patterns\SubscribersCollection;
 
 trait SubscribersAwareTrait
 {
     /**
-     * @var SplObjectStorage
+     * @var SubscribersCollection
      */
     protected $subscribers;
 
@@ -38,6 +38,13 @@ trait SubscribersAwareTrait
     {
         return $this->subscribers->contains($subscriberInterface);
     }
-    
+
+    /**
+     * @return SubscribersCollection
+     */
+    public function getSubscribers()
+    {
+        return $this->subscribers;
+    }
 
 }
