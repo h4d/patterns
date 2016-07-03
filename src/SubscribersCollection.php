@@ -46,5 +46,12 @@ class SubscribersCollection extends SplObjectStorage
         return parent::getHash($object);
     }
 
+    /**
+     * @return SubscriberInterface
+     */
+    public function current()
+    {
+        return parent::current();
+    }
 
 }
