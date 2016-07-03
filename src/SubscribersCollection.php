@@ -5,6 +5,7 @@ namespace H4D\Patterns;
 
 
 use H4D\Patterns\Interfaces\SubscriberInterface;
+use InvalidArgumentException;
 use SplObjectStorage;
 
 class SubscribersCollection extends SplObjectStorage
@@ -15,6 +16,10 @@ class SubscribersCollection extends SplObjectStorage
      */
     public function attach($object, $data = null)
     {
+        if (!$object instanceof SubscriberInterface)
+        {
+            throw new InvalidArgumentException();
+        }
         parent::attach($object, $data);
     }
 
@@ -23,6 +28,10 @@ class SubscribersCollection extends SplObjectStorage
      */
     public function detach($object)
     {
+        if (!$object instanceof SubscriberInterface)
+        {
+            throw new InvalidArgumentException();
+        }
         parent::detach($object);
     }
 
@@ -33,6 +42,10 @@ class SubscribersCollection extends SplObjectStorage
      */
     public function contains($object)
     {
+        if (!$object instanceof SubscriberInterface)
+        {
+            throw new InvalidArgumentException();
+        }
         return parent::contains($object);
     }
 
@@ -43,6 +56,10 @@ class SubscribersCollection extends SplObjectStorage
      */
     public function getHash($object)
     {
+        if (!$object instanceof SubscriberInterface)
+        {
+            throw new InvalidArgumentException();
+        }
         return parent::getHash($object);
     }
 
