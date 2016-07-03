@@ -64,9 +64,19 @@ abstract class AbstractEvent implements EventInterface
      */
     public function getContextValue($key, $default = null)
     {
-        $value = (array_key_exists($key, $this->context)) ? $this->context['key'] : $default;
+        $value = $this->hasContextKey($key) ? $this->context[$key] : $default;
 
         return $value;
+    }
+
+    /**
+     * @param string $attrName
+     *
+     * @return bool
+     */
+    public function hasContextKey($attrName)
+    {
+        return array_key_exists($attrName, $this->context);
     }
     
     /**
