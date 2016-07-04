@@ -18,6 +18,10 @@ abstract class AbstractEvent implements EventInterface
      * @var array
      */
     protected $context = [];
+    /**
+     * @var array
+     */
+    protected static $requiredContextFields = [];
 
     /**
      * Event constructor.
@@ -28,8 +32,26 @@ abstract class AbstractEvent implements EventInterface
     public function __construct($message, $context = [])
     {
         $this->message = $message;
-        $this->context = $context;
         $this->timestamp = time();
+        $this->checkRequiredContextFields($context);
+        $this->context = $context;
+
+    }
+
+    /**
+     * @param $context
+     */
+    protected function checkRequiredContextFields($context)
+    {
+        foreach (static::$requiredContextFields as $requiredContextField)
+        {
+            if (!array_key_exists($requiredContextField, $context))
+            {
+                throw new \InvalidArgumentException(sprintf('Required context field missing! ' .
+                                                            'Required fields: %s',
+                                                            implode(', ', static::$requiredContextFields)));
+            }
+        }
     }
 
     /**
