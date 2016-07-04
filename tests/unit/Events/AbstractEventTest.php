@@ -23,6 +23,13 @@ class AbstractEventTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($event->hasContextKey('b'));
         $this->assertFalse($event->hasContextKey('c'));
         $this->assertTrue(is_int($event->getTimestamp()));
+        $this->assertArrayHasKey('timestamp', $event->toArray());
+        $this->assertArrayHasKey('message', $event->toArray());
+        $this->assertArrayHasKey('context', $event->toArray());
+        $this->assertEquals($msg, $event->toArray()['message']);
+        $this->assertEquals($context, $event->toArray()['context']);
+        $this->assertEquals($event->getTimestamp(), $event->toArray()['timestamp']);
+
     }
 
     /**
