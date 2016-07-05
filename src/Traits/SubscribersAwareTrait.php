@@ -4,7 +4,7 @@
 namespace H4D\Patterns\Traits;
 
 use H4D\Patterns\Interfaces\SubscriberInterface;
-use H4D\Patterns\SubscribersCollection;
+use H4D\Patterns\Collections\SubscribersCollection;
 
 trait SubscribersAwareTrait
 {

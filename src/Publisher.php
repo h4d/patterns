@@ -2,6 +2,7 @@
 
 namespace H4D\Patterns;
 
+use H4D\Patterns\Collections\SubscribersCollection;
 use H4D\Patterns\Interfaces\EventInterface;
 use H4D\Patterns\Interfaces\PublisherInterface;
 use H4D\Patterns\Traits\SubscribersAwareTrait;

@@ -4,7 +4,7 @@
 namespace H4D\Patterns\Interfaces;
 
 
-use H4D\Patterns\SubscribersCollection;
+use H4D\Patterns\Collections\SubscribersCollection;
 
 interface PublisherInterface
 {
