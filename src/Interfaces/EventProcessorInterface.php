@@ -4,7 +4,7 @@
 namespace H4D\Patterns\Interfaces;
 
 
-interface EventProcessor
+interface EventProcessorInterface
 {
     /**
      * @param EventInterface $event
