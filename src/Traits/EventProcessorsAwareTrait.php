@@ -17,7 +17,7 @@ trait EventProcessorsAwareTrait
     /**
      * @param EventProcessorInterface $subscriber
      */
-    public function attachSubscriber(EventProcessorInterface $subscriber)
+    public function attachProcessor(EventProcessorInterface $subscriber)
     {
         $this->processors->attach($subscriber);
     }
@@ -25,7 +25,7 @@ trait EventProcessorsAwareTrait
     /**
      * @param EventProcessorInterface $subscriber
      */
-    public function detachSubscriber(EventProcessorInterface $subscriber)
+    public function detachProcessor(EventProcessorInterface $subscriber)
     {
         $this->processors->detach($subscriber);
     }
@@ -35,7 +35,7 @@ trait EventProcessorsAwareTrait
      *
      * @return bool
      */
-    public function hasSubscriber(EventProcessorInterface $subscriberInterface)
+    public function hasProcessor(EventProcessorInterface $subscriberInterface)
     {
         return $this->processors->contains($subscriberInterface);
     }
