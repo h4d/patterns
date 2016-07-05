@@ -1,7 +1,7 @@
 <?php
 
 
-namespace H4D\Patterns;
+namespace H4D\Patterns\Collections;
 
 
 use H4D\Patterns\Interfaces\SubscriberInterface;
