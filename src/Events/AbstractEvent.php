@@ -2,6 +2,7 @@
 
 namespace H4D\Patterns\Events;
 
+use H4D\Patterns\Collections\ArrayCollection;
 use H4D\Patterns\Interfaces\EventInterface;
 
 abstract class AbstractEvent implements EventInterface
@@ -15,9 +16,9 @@ abstract class AbstractEvent implements EventInterface
      */
     protected $message;
     /**
-     * @var array
+     * @var ArrayCollection
      */
-    protected $context = [];
+    protected $context;
     /**
      * @var array
      */
@@ -27,15 +28,14 @@ abstract class AbstractEvent implements EventInterface
      * Event constructor.
      *
      * @param string $message
-     * @param array $context
+     * @param array|ArrayCollection $context
      */
     public function __construct($message, $context = [])
     {
         $this->message = $message;
         $this->timestamp = time();
         $this->checkRequiredContextFields($context);
-        $this->context = $context;
-
+        $this->context = ($context instanceof ArrayCollection) ? $context : new ArrayCollection($context);
     }
 
     /**
@@ -71,44 +71,11 @@ abstract class AbstractEvent implements EventInterface
     }
 
     /**
-     * @return array
+     * @return ArrayCollection
      */
     public function getContext()
     {
         return $this->context;
-    }
-
-    /**
-     * @param string $key
-     * @param mixed $default
-     *
-     * @return mixed|null
-     */
-    public function getContextValue($key, $default = null)
-    {
-        $value = $this->hasContextKey($key) ? $this->context[$key] : $default;
-
-        return $value;
-    }
-
-    /**
-     * @param string $attrName
-     *
-     * @return bool
-     */
-    public function hasContextKey($attrName)
-    {
-        return array_key_exists($attrName, $this->context);
-    }
-    
-    /**
-     * @return array
-     */
-    public function toArray()
-    {
-        return ['timestamp'=>$this->timestamp,
-                'message'=>$this->message,
-                'context'=>$this->context];
     }
 
 }
