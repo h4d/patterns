@@ -9,7 +9,7 @@ use H4D\Patterns\Interfaces\EventInterface;
 class AbstractEventTest extends \PHPUnit_Framework_TestCase
 {
 
-    public function test_interfaceMethods_workProperly()
+    public function test_interfaceMethods_worksProperly()
     {
         $context = ['a'=>'A', 'b'=>'B'];
         $msg = 'Test event';
