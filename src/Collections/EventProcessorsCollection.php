@@ -68,6 +68,7 @@ class EventProcessorsCollection extends SplObjectStorage
      */
     public function current()
     {
+        /** @noinspection PhpIncompatibleReturnTypeInspection */
         return parent::current();
     }
 
