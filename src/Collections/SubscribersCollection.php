@@ -64,10 +64,11 @@ class SubscribersCollection extends SplObjectStorage
     }
 
     /**
-     * @return SubscriberInterface
+     * @return SubscriberInterface|null
      */
     public function current()
     {
+        /** @noinspection PhpIncompatibleReturnTypeInspection */
         return parent::current();
     }
 

@@ -64,7 +64,7 @@ class EventProcessorsCollection extends SplObjectStorage
     }
 
     /**
-     * @return EventProcessorInterface
+     * @return EventProcessorInterface|null
      */
     public function current()
     {
