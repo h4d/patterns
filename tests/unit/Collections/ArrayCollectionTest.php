@@ -74,4 +74,10 @@ class ArrayCollectionTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('C', $collection->get('a'));
     }
 
+    public function test_getIterator_returnsArrayIterator()
+    {
+        $collection = new ArrayCollection(['a', 'b', 'c']);
+        $this->assertTrue($collection->getIterator() instanceof \ArrayIterator);
+    }
+
 }
