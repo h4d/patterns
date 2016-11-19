@@ -1,6 +1,6 @@
 # ¿Qué es esto?
 
-Es un biblioteca con patrones de diseño usados en H4D. 
+Es un biblioteca con algunos patrones de diseño usados en H4D. 
 
 # Instalación vía composer:
 
